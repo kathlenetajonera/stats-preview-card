@@ -1,0 +1,150 @@
+@import "variables";
+
+:root {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  box-sizing: inherit;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+.landing {
+  background-color: $main-background;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 1.5rem;
+
+  @include media-query(tablet) {
+    height: 100vh;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 970px;
+}
+
+.card {
+  flex-basis: 100%;
+  background-color: $card-background;
+  border-radius: 0 0 0.4rem 0.4rem;
+
+  @include media-query(tablet) {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  &--text {
+    padding: 2rem;
+    text-align: center;
+
+    @include media-query(tablet) {
+      border-radius: 0.4rem 0 0 0.4rem;
+      text-align: left;
+    }
+  }
+
+  &--image {
+    height: 250px;
+    border-radius: 0.4rem 0.4rem 0 0;
+    background: linear-gradient(
+        to right,
+        rgba(170, 92, 219, 0.65),
+        hsla(277, 64%, 61%, 0.65)
+      ),
+      url("/images/image-header-mobile.jpg");
+    background-size: cover;
+    position: relative;
+
+    @include media-query(tablet) {
+      height: auto;
+      order: 1;
+      border-radius: 0 0.4rem 0.4rem 0;
+      background: linear-gradient(
+          to right,
+          rgba(170, 92, 219, 0.65),
+          hsla(277, 64%, 61%, 0.65)
+        ),
+        url("/images/image-header-desktop.jpg");
+    }
+  }
+
+  &__main-text {
+    font-family: $heading-font;
+    font-size: 1.8rem;
+    color: $white;
+    margin: 0;
+
+    &--violet {
+      color: $violet;
+    }
+
+    &--stats {
+      @include media-query(tablet) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__body-text {
+    font-family: $body-font;
+    font-size: 0.88rem;
+    color: $transparent-white;
+    line-height: 1.5rem;
+    margin: 1.5rem 0 3rem;
+
+    @include media-query(tablet) {
+      font-size: 0.8rem;
+    }
+
+    &--stats {
+      letter-spacing: 1px;
+      margin: 0.5rem 0;
+
+      @include media-query(tablet) {
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  &__stats {
+    // margin-top: 3rem;
+    margin-left: -2rem;
+
+    @include media-query(tablet) {
+      display: flex;
+      margin-left: 0;
+    }
+  }
+
+  &__stat {
+    margin: 2rem 0 0 2rem;
+    flex: 1 1 250px;
+
+    @include media-query(tablet) {
+      margin: 0;
+      flex: 1;
+    }
+  }
+}
+
+.attribution {
+  font-family: $body-font;
+  font-size: 10px;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
