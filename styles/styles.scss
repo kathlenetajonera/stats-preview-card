@@ -118,17 +118,13 @@ body {
   }
 
   &__stats {
-    // margin-top: 3rem;
-    margin-left: -2rem;
-
     @include media-query(tablet) {
       display: flex;
-      margin-left: 0;
     }
   }
 
   &__stat {
-    margin: 2rem 0 0 2rem;
+    margin-top: 2rem;
     flex: 1 1 250px;
 
     @include media-query(tablet) {
